@@ -20,7 +20,7 @@ jobs:
         uses: microsoft/security-devops-action@latest
         continue-on-error: false
         id: msdo
-- name: Upload alerts to Security tab
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: ${{ steps.msdo.outputs.sarifFile }}
+      - name: Upload alerts to Security tab
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+         sarif_file: ${{ steps.msdo.outputs.sarifFile }}
